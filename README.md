@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/kmedian/colabtweak.svg?branch=master)](https://travis-ci.org/kmedian/colabtweak)
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/kmedian/colabtweak/master?urlpath=lab)
 
 # colabtweak
 Tweaks for Google Colab.
