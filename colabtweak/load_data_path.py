@@ -1,5 +1,6 @@
 
 import os
+import sys
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from google.colab import auth
@@ -46,7 +47,7 @@ def load_data_path(folder_id, colab_path='/root/data/', local_path='../data/'):
 
     """
 
-    if os.getcwd() == '/content':  # Not a very clever way to identify Colab
+    if 'google.colab' in sys.modules:
         print("Notebook is running in Colab")
 
         if folder_id is None:
