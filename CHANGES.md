@@ -1,5 +1,9 @@
 # 0.1.3 / 2018-11-10
 
+  * Catch exception
+
+# 0.1.3 / 2018-11-10
+
   * load 'google.colab' later
 
 # 0.1.2 / 2018-11-10

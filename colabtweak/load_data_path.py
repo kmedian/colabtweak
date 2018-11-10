@@ -77,10 +77,13 @@ def load_data_path(folder_id, colab_path='/root/data/', local_path='../data/',
 
         # Copy all files
         for file in listed:
-            print('{} {}'.format(file['id'], file['title']))
-            output_file = os.path.join(download_path, file['title'])
-            temp_file = drive.CreateFile({'id': file['id']})
-            temp_file.GetContentFile(output_file)
+            try:
+                print('{} {}'.format(file['id'], file['title']))
+                output_file = os.path.join(download_path, file['title'])
+                temp_file = drive.CreateFile({'id': file['id']})
+                temp_file.GetContentFile(output_file)
+            except Exception as e:
+                print(e)
 
         # Set directory path
         return colab_path
