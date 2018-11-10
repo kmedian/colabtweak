@@ -7,7 +7,7 @@ def read(fname):
 
 
 setup(name='colabtweak',
-      version='0.1.2',
+      version='0.1.3',
       description='Tweaks for Google Colab',
       long_description=read('README.md'),
       long_description_content_type='text/markdown',
@@ -17,7 +17,7 @@ setup(name='colabtweak',
       license='MIT',
       packages=['colabtweak'],
       install_requires=[
-          'setuptools>=40.0.0',
+          'setuptools>=39.1.0',
           'PyDrive>=1.3.1',
           'google-api-python-client>=1.7.4',
           'oauth2client>=4.1.3'],

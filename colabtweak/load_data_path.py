@@ -3,7 +3,6 @@ import os
 import sys
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-from google.colab import auth
 from oauth2client.client import GoogleCredentials
 
 
@@ -58,6 +57,7 @@ def load_data_path(folder_id, colab_path='/root/data/', local_path='../data/',
                 "'https://drive.google.com/drive/u/0/folders/<folder_id>'"))
 
         # Login
+        from google.colab import auth
         auth.authenticate_user()
         gauth = GoogleAuth()
         gauth.credentials = GoogleCredentials.get_application_default()
