@@ -8,7 +8,8 @@ from oauth2client.client import GoogleCredentials
 
 
 # Colab Boilerplate to download data from G Drive
-def load_data_path(folder_id, colab_path='/root/data/', local_path='../data/'):
+def load_data_path(folder_id, colab_path='/root/data/', local_path='../data/',
+                   mime_types=['csv', 'zip']):
     """Boilerplate to download data from Google Drive into Colab
     notebook or to point to local data folder
 
@@ -70,7 +71,8 @@ def load_data_path(folder_id, colab_path='/root/data/', local_path='../data/'):
             pass
 
         # Extract the FileIDs from the Google Drive directory
-        querystr = "title contains '.csv' and '" + folder_id + "' in parents"
+        tmp = ' or '.join(["title contains '." + m + "'" for m in mime_types])
+        querystr = "(" + tmp + ") and '" + folder_id + "' in parents"
         listed = drive.ListFile({'q': querystr}).GetList()
 
         # Copy all files
